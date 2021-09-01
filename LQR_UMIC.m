@@ -21,13 +21,13 @@ zvec(1,i+1)= zvec(1, i) + dt*(zvec(2, i) + dt*(uz(1, i)));
 zvec(2,i+1)= zvec(2, i) + dt*(uz(1, i));
 end 
 
-%Can define absolute zvec
-I1= [0 1; -K0(1) -K0(2)];
-I2= [0 0; K0(1) K0(2)];
-%zab(t) =  expm(I1*t)*z0 + (expm(I1*t)-eye(4))*inv(I1)*I2*zd;
-for i=1:n/10
-    disp(zab(i,z0, zd, I1, I2));
-end
+% %Can define absolute zvec
+% I1= [0 1; -K0(1) -K0(2)];
+% I2= [0 0; K0(1) K0(2)];
+% %zab(t) =  expm(I1*t)*z0 + (expm(I1*t)-eye(4))*inv(I1)*I2*zd;
+% for i=1:n/10
+%     disp(zab(i,z0, zd, I1, I2));
+% end
 
 % U1 = m*(g-uz);
 % 
@@ -43,7 +43,7 @@ end
 
 %[U2; U3; U4] = -K1*angle; 
 
-function z = zab(t, z0, zd, I1, I2)
-    z =  expm(I1*t)*z0 + (expm(I1*t)-eye(4))*inv(I1)*I2*zd;
-end
+% function z = zab(t, z0, zd, I1, I2)
+%     z =  expm(I1*t)*z0 + (expm(I1*t)-eye(4))*inv(I1)*I2*zd;
+% end
     
