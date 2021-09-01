@@ -14,11 +14,11 @@ uz = zeros(1,n);
 zd = [5;0];
 
 for i=1:n
-uz(1,i) = -K0*(zvec(:,i) - zd);
+    uz(1,i) = -K0*(zvec(:,i) - zd);
 
-%Find zvec at next time instant
-zvec(1,i+1)= zvec(1, i) + dt*(zvec(2, i) + dt*(uz(1, i)));
-zvec(2,i+1)= zvec(2, i) + dt*(uz(1, i));
+    %Find zvec at next time instant
+    zvec(1,i+1)= zvec(1, i) + dt*(zvec(2, i) + dt*(uz(1, i)));
+    zvec(2,i+1)= zvec(2, i) + dt*(uz(1, i));
 end 
 
 % %Can define absolute zvec
